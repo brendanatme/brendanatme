@@ -1,4 +1,4 @@
-@import "../abstract/bg";
+@import "../abstract/all";
 
 @mixin make-bg($prefix: '') {
   .#{$prefix}bg {

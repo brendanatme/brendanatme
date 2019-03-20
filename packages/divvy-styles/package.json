@@ -1,11 +1,12 @@
 {
   "name": "sass-utils",
   "version": "1.0.0",
-  "description": "Sweet sweet general sass mixins and css classes on an opt-in opt-out basis",
+  "description": "Sweet sweet general sass mixins and css classes",
   "main": "index.js",
   "scripts": {
-    "compile": "node-sass -o css --output-style compressed ./src/global",
-    "copy": "cp -r src/abstract/ scss; cp css/all.css css/min.css",
+    "dev": "gulp",
+    "compile": "gulp compile",
+    "copy": "cp -r src/abstract/ scss",
     "build": "npm run compile; npm run copy",
     "release": "node ./scripts/release.js"
   },
@@ -17,6 +18,10 @@
   "license": "ISC",
   "homepage": "https://github.com/brendanatme/sass-utils",
   "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^4.0.2",
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0"
   }

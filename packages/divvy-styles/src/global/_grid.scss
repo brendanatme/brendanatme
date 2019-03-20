@@ -3,21 +3,20 @@
 // and converted from flexbox to floats
 // ==========================================================================
 
-@import "../abstract/breakpoints";
-@import "../abstract/grid";
+@import "../abstract/all";
 
 @mixin make-grid($prefix: '') {
 
-// TODO: what do about this
-#{$prefix} {
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-}
+.#{$prefix}sass-utils--scope {
+  &,
+  *,
+  *:before,
+  *:after {
+    -webkit-box--sizing: border-box;
+    --moz-box--sizing: border-box;
+    box--sizing: border-box;
+  }
+} // / .#{$prefix}sass-utils--scope
 
 // 
 // base
@@ -25,7 +24,7 @@
 // 
 
 .#{$prefix}row {
-  @include row;
+  @include row($prefix);
 }
 
 .#{$prefix}col-1,
@@ -49,7 +48,7 @@
 .#{$prefix}col-2-5,
 .#{$prefix}col-3-5,
 .#{$prefix}col-4-5 {
-  @include col;
+  @include col($prefix);
 }
 
 $columns: 12;
@@ -138,40 +137,40 @@ $columns: 12;
 // 
 
 @include breakpoint(s) {
-  .#{$prefix}row-s {
-    @include row;
+  .#{$prefix}row--s {
+    @include row($prefix);
   }
   
-  .#{$prefix}col-1-s,
-  .#{$prefix}col-2-s,
-  .#{$prefix}col-3-s,
-  .#{$prefix}col-4-s,
-  .#{$prefix}col-5-s,
-  .#{$prefix}col-6-s,
-  .#{$prefix}col-7-s,
-  .#{$prefix}col-8-s,
-  .#{$prefix}col-9-s,
-  .#{$prefix}col-10-s,
-  .#{$prefix}col-11-s,
-  .#{$prefix}col-12-s,
-  .#{$prefix}col-1-2-s,
-  .#{$prefix}col-1-3-s,
-  .#{$prefix}col-2-3-s,
-  .#{$prefix}col-1-4-s,
-  .#{$prefix}col-3-4-s,
-  .#{$prefix}col-1-5-s,
-  .#{$prefix}col-2-5-s,
-  .#{$prefix}col-3-5-s,
-  .#{$prefix}col-4-5-s {
-    @include col;
+  .#{$prefix}col-1--s,
+  .#{$prefix}col-2--s,
+  .#{$prefix}col-3--s,
+  .#{$prefix}col-4--s,
+  .#{$prefix}col-5--s,
+  .#{$prefix}col-6--s,
+  .#{$prefix}col-7--s,
+  .#{$prefix}col-8--s,
+  .#{$prefix}col-9--s,
+  .#{$prefix}col-10--s,
+  .#{$prefix}col-11--s,
+  .#{$prefix}col-12--s,
+  .#{$prefix}col-1-2--s,
+  .#{$prefix}col-1-3--s,
+  .#{$prefix}col-2-3--s,
+  .#{$prefix}col-1-4--s,
+  .#{$prefix}col-3-4--s,
+  .#{$prefix}col-1-5--s,
+  .#{$prefix}col-2-5--s,
+  .#{$prefix}col-3-5--s,
+  .#{$prefix}col-4-5--s {
+    @include col($prefix);
   }
 
   $columns: 12;
   @for $i from 0 through $columns {
-    .#{$prefix}col-#{$i}-s {
+    .#{$prefix}col-#{$i}--s {
       width: ($i / $columns) * 100%;
     }
-    .#{$prefix}push-#{$i}-s {
+    .#{$prefix}push-#{$i}--s {
       margin-left: ($i / $columns) * 100%;
       &.#{$prefix}ib {
         left: ($i / $columns) * 100%;
@@ -179,7 +178,7 @@ $columns: 12;
         position: relative;
       }
     }
-    .#{$prefix}pull-#{$i}-s {
+    .#{$prefix}pull-#{$i}--s {
       margin-left: -#{($i / $columns) * 100%};
       &.#{$prefix}ib {
         left: -#{($i / $columns) * 100%};
@@ -188,61 +187,61 @@ $columns: 12;
       }
     }
   }
-  .#{$prefix}col-1-2-s {
+  .#{$prefix}col-1-2--s {
     width: (6 / 12) * 100%;
   }
-  .#{$prefix}col-1-3-s {
+  .#{$prefix}col-1-3--s {
     width: (4 / 12) * 100%;
   }
-  .#{$prefix}col-2-3-s {
+  .#{$prefix}col-2-3--s {
     width: (8 / 12) * 100%;
   }
-  .#{$prefix}col-1-4-s {
+  .#{$prefix}col-1-4--s {
     width: (3 / 12) * 100%;
   }
-  .#{$prefix}col-3-4-s {
+  .#{$prefix}col-3-4--s {
     width: (9 / 12) * 100%;
   }
-  .#{$prefix}col-1-5-s {
+  .#{$prefix}col-1-5--s {
     width: (2.4 / 12) * 100%;
   }
-  .#{$prefix}col-2-5-s {
+  .#{$prefix}col-2-5--s {
     width: (4.8 / 12) * 100%;
   }
-  .#{$prefix}col-3-5-s {
+  .#{$prefix}col-3-5--s {
     width: (7.2 / 12) * 100%;
   }
-  .#{$prefix}col-4-5-s {
+  .#{$prefix}col-4-5--s {
     width: (9.6 / 12) * 100%;
   }
-  .#{$prefix}col-full-s {
+  .#{$prefix}col-full--s {
     width: 100%;
   }
-  .#{$prefix}push-1-2-s {
+  .#{$prefix}push-1-2--s {
     margin-left: (6 / 12) * 100%;
   }
-  .#{$prefix}push-1-3-s {
+  .#{$prefix}push-1-3--s {
     margin-left: (4 / 12) * 100%;
   }
-  .#{$prefix}push-2-3-s {
+  .#{$prefix}push-2-3--s {
     margin-left: (8 / 12) * 100%;
   }
-  .#{$prefix}push-1-4-s {
+  .#{$prefix}push-1-4--s {
     margin-left: (3 / 12) * 100%;
   }
-  .#{$prefix}push-3-4-s {
+  .#{$prefix}push-3-4--s {
     margin-left: (9 / 12) * 100%;
   }
-  .#{$prefix}push-1-5-s {
+  .#{$prefix}push-1-5--s {
     margin-left: (2.4 / 12) * 100%;
   }
-  .#{$prefix}push-2-5-s {
+  .#{$prefix}push-2-5--s {
     margin-left: (4.8 / 12) * 100%;
   }
-  .#{$prefix}push-3-5-s {
+  .#{$prefix}push-3-5--s {
     margin-left: (7.2 / 12) * 100%;
   }
-  .#{$prefix}push-4-5-s {
+  .#{$prefix}push-4-5--s {
     margin-left: (9.6 / 12) * 100%;
   }
 }
@@ -252,40 +251,40 @@ $columns: 12;
 // 
 
 @include breakpoint(m) {
-  .#{$prefix}row-m {
-    @include #{$prefix}row;
+  .#{$prefix}row--m {
+    @include row($prefix);
   }
   
-  .#{$prefix}col-1-m,
-  .#{$prefix}col-2-m,
-  .#{$prefix}col-3-m,
-  .#{$prefix}col-4-m,
-  .#{$prefix}col-5-m,
-  .#{$prefix}col-6-m,
-  .#{$prefix}col-7-m,
-  .#{$prefix}col-8-m,
-  .#{$prefix}col-9-m,
-  .#{$prefix}col-10-m,
-  .#{$prefix}col-11-m,
-  .#{$prefix}col-12-m,
-  .#{$prefix}col-1-2-m,
-  .#{$prefix}col-1-3-m,
-  .#{$prefix}col-2-3-m,
-  .#{$prefix}col-1-4-m,
-  .#{$prefix}col-3-4-m,
-  .#{$prefix}col-1-5-m,
-  .#{$prefix}col-2-5-m,
-  .#{$prefix}col-3-5-m,
-  .#{$prefix}col-4-5-m {
-    @include col;
+  .#{$prefix}col-1--m,
+  .#{$prefix}col-2--m,
+  .#{$prefix}col-3--m,
+  .#{$prefix}col-4--m,
+  .#{$prefix}col-5--m,
+  .#{$prefix}col-6--m,
+  .#{$prefix}col-7--m,
+  .#{$prefix}col-8--m,
+  .#{$prefix}col-9--m,
+  .#{$prefix}col-10--m,
+  .#{$prefix}col-11--m,
+  .#{$prefix}col-12--m,
+  .#{$prefix}col-1-2--m,
+  .#{$prefix}col-1-3--m,
+  .#{$prefix}col-2-3--m,
+  .#{$prefix}col-1-4--m,
+  .#{$prefix}col-3-4--m,
+  .#{$prefix}col-1-5--m,
+  .#{$prefix}col-2-5--m,
+  .#{$prefix}col-3-5--m,
+  .#{$prefix}col-4-5--m {
+    @include col($prefix);
   }
 
   $columns: 12;
   @for $i from 0 through $columns {
-    .#{$prefix}col-#{$i}-m {
+    .#{$prefix}col-#{$i}--m {
       width: ($i / $columns) * 100%;
     }
-    .#{$prefix}push-#{$i}-m {
+    .#{$prefix}push-#{$i}--m {
       margin-left: ($i / $columns) * 100%;
       &.#{$prefix}ib {
         left: ($i / $columns) * 100%;
@@ -293,7 +292,7 @@ $columns: 12;
         position: relative;
       }
     }
-    .#{$prefix}pull-#{$i}-m {
+    .#{$prefix}pull-#{$i}--m {
       margin-left: -#{($i / $columns) * 100%};
       &.#{$prefix}ib {
         left: -#{($i / $columns) * 100%};
@@ -302,61 +301,61 @@ $columns: 12;
       }
     }
   }
-  .#{$prefix}col-1-2-m {
+  .#{$prefix}col-1-2--m {
     width: (6 / 12) * 100%;
   }
-  .#{$prefix}col-1-3-m {
+  .#{$prefix}col-1-3--m {
     width: (4 / 12) * 100%;
   }
-  .#{$prefix}col-2-3-m {
+  .#{$prefix}col-2-3--m {
     width: (8 / 12) * 100%;
   }
-  .#{$prefix}col-1-4-m {
+  .#{$prefix}col-1-4--m {
     width: (3 / 12) * 100%;
   }
-  .#{$prefix}col-3-4-m {
+  .#{$prefix}col-3-4--m {
     width: (9 / 12) * 100%;
   }
-  .#{$prefix}col-1-5-m {
+  .#{$prefix}col-1-5--m {
     width: (2.4 / 12) * 100%;
   }
-  .#{$prefix}col-2-5-m {
+  .#{$prefix}col-2-5--m {
     width: (4.8 / 12) * 100%;
   }
-  .#{$prefix}col-3-5-m {
+  .#{$prefix}col-3-5--m {
     width: (7.2 / 12) * 100%;
   }
-  .#{$prefix}col-4-5-m {
+  .#{$prefix}col-4-5--m {
     width: (9.6 / 12) * 100%;
   }
-  .#{$prefix}col-full-m {
+  .#{$prefix}col-full--m {
     width: 100%;
   }
-  .#{$prefix}push-1-2-m {
+  .#{$prefix}push-1-2--m {
     margin-left: (6 / 12) * 100%;
   }
-  .#{$prefix}push-1-3-m {
+  .#{$prefix}push-1-3--m {
     margin-left: (4 / 12) * 100%;
   }
-  .#{$prefix}push-2-3-m {
+  .#{$prefix}push-2-3--m {
     margin-left: (8 / 12) * 100%;
   }
-  .#{$prefix}push-1-4-m {
+  .#{$prefix}push-1-4--m {
     margin-left: (3 / 12) * 100%;
   }
-  .#{$prefix}push-3-4-m {
+  .#{$prefix}push-3-4--m {
     margin-left: (9 / 12) * 100%;
   }
-  .#{$prefix}push-1-5-m {
+  .#{$prefix}push-1-5--m {
     margin-left: (2.4 / 12) * 100%;
   }
-  .#{$prefix}push-2-5-m {
+  .#{$prefix}push-2-5--m {
     margin-left: (4.8 / 12) * 100%;
   }
-  .#{$prefix}push-3-5-m {
+  .#{$prefix}push-3-5--m {
     margin-left: (7.2 / 12) * 100%;
   }
-  .#{$prefix}push-4-5-m {
+  .#{$prefix}push-4-5--m {
     margin-left: (9.6 / 12) * 100%;
   }
 }
@@ -366,40 +365,40 @@ $columns: 12;
 // 
 
 @include breakpoint(l) {
-  .#{$prefix}row-l {
-    @include #{$prefix}row;
+  .#{$prefix}row--l {
+    @include row($prefix);
   }
   
-  .#{$prefix}col-1-l,
-  .#{$prefix}col-2-l,
-  .#{$prefix}col-3-l,
-  .#{$prefix}col-4-l,
-  .#{$prefix}col-5-l,
-  .#{$prefix}col-6-l,
-  .#{$prefix}col-7-l,
-  .#{$prefix}col-8-l,
-  .#{$prefix}col-9-l,
-  .#{$prefix}col-10-l,
-  .#{$prefix}col-11-l,
-  .#{$prefix}col-12-l,
-  .#{$prefix}col-1-2-l,
-  .#{$prefix}col-1-3-l,
-  .#{$prefix}col-2-3-l,
-  .#{$prefix}col-1-4-l,
-  .#{$prefix}col-3-4-l,
-  .#{$prefix}col-1-5-l,
-  .#{$prefix}col-2-5-l,
-  .#{$prefix}col-3-5-l,
-  .#{$prefix}col-4-5-l {
-    @include col;
+  .#{$prefix}col-1--l,
+  .#{$prefix}col-2--l,
+  .#{$prefix}col-3--l,
+  .#{$prefix}col-4--l,
+  .#{$prefix}col-5--l,
+  .#{$prefix}col-6--l,
+  .#{$prefix}col-7--l,
+  .#{$prefix}col-8--l,
+  .#{$prefix}col-9--l,
+  .#{$prefix}col-10--l,
+  .#{$prefix}col-11--l,
+  .#{$prefix}col-12--l,
+  .#{$prefix}col-1-2--l,
+  .#{$prefix}col-1-3--l,
+  .#{$prefix}col-2-3--l,
+  .#{$prefix}col-1-4--l,
+  .#{$prefix}col-3-4--l,
+  .#{$prefix}col-1-5--l,
+  .#{$prefix}col-2-5--l,
+  .#{$prefix}col-3-5--l,
+  .#{$prefix}col-4-5--l {
+    @include col($prefix);
   }
 
   $columns: 12;
   @for $i from 0 through $columns {
-    .#{$prefix}col-#{$i}-l {
+    .#{$prefix}col-#{$i}--l {
       width: ($i / $columns) * 100%;
     }
-    .#{$prefix}push-#{$i}-l {
+    .#{$prefix}push-#{$i}--l {
       margin-left: ($i / $columns) * 100%;
       &.#{$prefix}ib {
         left: ($i / $columns) * 100%;
@@ -407,7 +406,7 @@ $columns: 12;
         position: relative;
       }
     }
-    .#{$prefix}pull-#{$i}-l {
+    .#{$prefix}pull-#{$i}--l {
       margin-left: -#{($i / $columns) * 100%};
       &.#{$prefix}ib {
         left: -#{($i / $columns) * 100%};
@@ -416,61 +415,61 @@ $columns: 12;
       }
     }
   }
-  .#{$prefix}col-1-2-l {
+  .#{$prefix}col-1-2--l {
     width: (6 / 12) * 100%;
   }
-  .#{$prefix}col-1-3-l {
+  .#{$prefix}col-1-3--l {
     width: (4 / 12) * 100%;
   }
-  .#{$prefix}col-2-3-l {
+  .#{$prefix}col-2-3--l {
     width: (8 / 12) * 100%;
   }
-  .#{$prefix}col-1-4-l {
+  .#{$prefix}col-1-4--l {
     width: (3 / 12) * 100%;
   }
-  .#{$prefix}col-3-4-l {
+  .#{$prefix}col-3-4--l {
     width: (9 / 12) * 100%;
   }
-  .#{$prefix}col-1-5-l {
+  .#{$prefix}col-1-5--l {
     width: (2.4 / 12) * 100%;
   }
-  .#{$prefix}col-2-5-l {
+  .#{$prefix}col-2-5--l {
     width: (4.8 / 12) * 100%;
   }
-  .#{$prefix}col-3-5-l {
+  .#{$prefix}col-3-5--l {
     width: (7.2 / 12) * 100%;
   }
-  .#{$prefix}col-4-5-l {
+  .#{$prefix}col-4-5--l {
     width: (9.6 / 12) * 100%;
   }
-  .#{$prefix}col-full-l {
+  .#{$prefix}col-full--l {
     width: 100%;
   }
-  .#{$prefix}push-1-2-l {
+  .#{$prefix}push-1-2--l {
     margin-left: (6 / 12) * 100%;
   }
-  .#{$prefix}push-1-3-l {
+  .#{$prefix}push-1-3--l {
     margin-left: (4 / 12) * 100%;
   }
-  .#{$prefix}push-2-3-l {
+  .#{$prefix}push-2-3--l {
     margin-left: (8 / 12) * 100%;
   }
-  .#{$prefix}push-1-4-l {
+  .#{$prefix}push-1-4--l {
     margin-left: (3 / 12) * 100%;
   }
-  .#{$prefix}push-3-4-l {
+  .#{$prefix}push-3-4--l {
     margin-left: (9 / 12) * 100%;
   }
-  .#{$prefix}push-1-5-l {
+  .#{$prefix}push-1-5--l {
     margin-left: (2.4 / 12) * 100%;
   }
-  .#{$prefix}push-2-5-l {
+  .#{$prefix}push-2-5--l {
     margin-left: (4.8 / 12) * 100%;
   }
-  .#{$prefix}push-3-5-l {
+  .#{$prefix}push-3-5--l {
     margin-left: (7.2 / 12) * 100%;
   }
-  .#{$prefix}push-4-5-l {
+  .#{$prefix}push-4-5--l {
     margin-left: (9.6 / 12) * 100%;
   }
 }
@@ -480,40 +479,40 @@ $columns: 12;
 // 
 
 @include breakpoint(xl) {
-  .#{$prefix}row-xl {
-    @include #{$prefix}row;
+  .#{$prefix}row--xl {
+    @include row($prefix);
   }
   
-  .#{$prefix}col-1-xl,
-  .#{$prefix}col-2-xl,
-  .#{$prefix}col-3-xl,
-  .#{$prefix}col-4-xl,
-  .#{$prefix}col-5-xl,
-  .#{$prefix}col-6-xl,
-  .#{$prefix}col-7-xl,
-  .#{$prefix}col-8-xl,
-  .#{$prefix}col-9-xl,
-  .#{$prefix}col-10-xl,
-  .#{$prefix}col-11-xl,
-  .#{$prefix}col-12-xl,
-  .#{$prefix}col-1-2-xl,
-  .#{$prefix}col-1-3-xl,
-  .#{$prefix}col-2-3-xl,
-  .#{$prefix}col-1-4-xl,
-  .#{$prefix}col-3-4-xl,
-  .#{$prefix}col-1-5-xl,
-  .#{$prefix}col-2-5-xl,
-  .#{$prefix}col-3-5-xl,
-  .#{$prefix}col-4-5-xl {
-    @include col;
+  .#{$prefix}col-1--xl,
+  .#{$prefix}col-2--xl,
+  .#{$prefix}col-3--xl,
+  .#{$prefix}col-4--xl,
+  .#{$prefix}col-5--xl,
+  .#{$prefix}col-6--xl,
+  .#{$prefix}col-7--xl,
+  .#{$prefix}col-8--xl,
+  .#{$prefix}col-9--xl,
+  .#{$prefix}col-10--xl,
+  .#{$prefix}col-11--xl,
+  .#{$prefix}col-12--xl,
+  .#{$prefix}col-1-2--xl,
+  .#{$prefix}col-1-3--xl,
+  .#{$prefix}col-2-3--xl,
+  .#{$prefix}col-1-4--xl,
+  .#{$prefix}col-3-4--xl,
+  .#{$prefix}col-1-5--xl,
+  .#{$prefix}col-2-5--xl,
+  .#{$prefix}col-3-5--xl,
+  .#{$prefix}col-4-5--xl {
+    @include col($prefix);
   }
 
   $columns: 12;
   @for $i from 0 through $columns {
-    .#{$prefix}col-#{$i}-xl {
+    .#{$prefix}col-#{$i}--xl {
       width: ($i / $columns) * 100%;
     }
-    .#{$prefix}push-#{$i}-xl {
+    .#{$prefix}push-#{$i}--xl {
       margin-left: ($i / $columns) * 100%;
       &.#{$prefix}ib {
         left: ($i / $columns) * 100%;
@@ -521,7 +520,7 @@ $columns: 12;
         position: relative;
       }
     }
-    .#{$prefix}pull-#{$i}-xl {
+    .#{$prefix}pull-#{$i}--xl {
       margin-left: -#{($i / $columns) * 100%};
       &.#{$prefix}ib {
         left: -#{($i / $columns) * 100%};
@@ -530,61 +529,61 @@ $columns: 12;
       }
     }
   }
-  .#{$prefix}col-1-2-xl {
+  .#{$prefix}col-1-2--xl {
     width: (6 / 12) * 100%;
   }
-  .#{$prefix}col-1-3-xl {
+  .#{$prefix}col-1-3--xl {
     width: (4 / 12) * 100%;
   }
-  .#{$prefix}col-2-3-xl {
+  .#{$prefix}col-2-3--xl {
     width: (8 / 12) * 100%;
   }
-  .#{$prefix}col-1-4-xl {
+  .#{$prefix}col-1-4--xl {
     width: (3 / 12) * 100%;
   }
-  .#{$prefix}col-3-4-xl {
+  .#{$prefix}col-3-4--xl {
     width: (9 / 12) * 100%;
   }
-  .#{$prefix}col-1-5-xl {
+  .#{$prefix}col-1-5--xl {
     width: (2.4 / 12) * 100%;
   }
-  .#{$prefix}col-2-5-xl {
+  .#{$prefix}col-2-5--xl {
     width: (4.8 / 12) * 100%;
   }
-  .#{$prefix}col-3-5-xl {
+  .#{$prefix}col-3-5--xl {
     width: (7.2 / 12) * 100%;
   }
-  .#{$prefix}col-4-5-xl {
+  .#{$prefix}col-4-5--xl {
     width: (9.6 / 12) * 100%;
   }
-  .#{$prefix}col-full-xl {
+  .#{$prefix}col-full--xl {
     width: 100%;
   }
-  .#{$prefix}push-1-2-xl {
+  .#{$prefix}push-1-2--xl {
     margin-left: (6 / 12) * 100%;
   }
-  .#{$prefix}push-1-3-xl {
+  .#{$prefix}push-1-3--xl {
     margin-left: (4 / 12) * 100%;
   }
-  .#{$prefix}push-2-3-xl {
+  .#{$prefix}push-2-3--xl {
     margin-left: (8 / 12) * 100%;
   }
-  .#{$prefix}push-1-4-xl {
+  .#{$prefix}push-1-4--xl {
     margin-left: (3 / 12) * 100%;
   }
-  .#{$prefix}push-3-4-xl {
+  .#{$prefix}push-3-4--xl {
     margin-left: (9 / 12) * 100%;
   }
-  .#{$prefix}push-1-5-xl {
+  .#{$prefix}push-1-5--xl {
     margin-left: (2.4 / 12) * 100%;
   }
-  .#{$prefix}push-2-5-xl {
+  .#{$prefix}push-2-5--xl {
     margin-left: (4.8 / 12) * 100%;
   }
-  .#{$prefix}push-3-5-xl {
+  .#{$prefix}push-3-5--xl {
     margin-left: (7.2 / 12) * 100%;
   }
-  .#{$prefix}push-4-5-xl {
+  .#{$prefix}push-4-5--xl {
     margin-left: (9.6 / 12) * 100%;
   }
 }
@@ -603,7 +602,7 @@ $columns: 12;
 }
 
 @include breakpoint('xs') {
-  .#{$prefix}row-bleed-xs {
+  .#{$prefix}row-bleed--xs {
     [class*="#{$prefix}col-"] {
       padding-left: 0;
       padding-right: 0;
@@ -612,7 +611,7 @@ $columns: 12;
 }
 
 @include breakpoint('s') {
-  .#{$prefix}row-bleed-s {
+  .#{$prefix}row-bleed--s {
     [class*="#{$prefix}col-"] {
       padding-left: 0;
       padding-right: 0;
@@ -621,7 +620,7 @@ $columns: 12;
 }
 
 @include breakpoint('m') {
-  .#{$prefix}row-bleed-m {
+  .#{$prefix}row-bleed--m {
     [class*="#{$prefix}col-"] {
       padding-left: 0;
       padding-right: 0;
@@ -630,7 +629,7 @@ $columns: 12;
 }
 
 @include breakpoint('l') {
-  .#{$prefix}row-bleed-l {
+  .#{$prefix}row-bleed--l {
     [class*="#{$prefix}col-"] {
       padding-left: 0;
       padding-right: 0;
@@ -639,7 +638,7 @@ $columns: 12;
 }
 
 @include breakpoint('xl') {
-  .#{$prefix}row-bleed-xl {
+  .#{$prefix}row-bleed--xl {
     [class*="#{$prefix}col-"] {
       padding-left: 0;
       padding-right: 0;

@@ -1,4 +1,4 @@
-@import "../abstract/resets";
+@import "../abstract/all";
 
 @mixin make-resets($prefix: '') {
   .#{$prefix}ul-reset {

@@ -1,4 +1,4 @@
-@import "../abstract/container";
+@import "../abstract/all";
 
 @mixin make-container($prefix: '') {
   .#{$prefix}container {

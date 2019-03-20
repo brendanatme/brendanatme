@@ -5,7 +5,7 @@
 // use !important flag since we want to override any local display property
 // that might be set on an element by a competing class
 // 
-@import "../abstract/breakpoints";
+@import "../abstract/all";
 
 @mixin make-breakpoints($prefix: '') {
   .#{$prefix}smallest-only {

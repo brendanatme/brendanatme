@@ -10,7 +10,7 @@
 // do we even need this?
 // 
 @mixin make-global($prefix: '') {
-  #{$prefix} {
+  .#{$prefix}sass-utils-scope {
     &,
     body {
       height: 100%;

@@ -4,16 +4,16 @@
 // generate all css classes for all modules
 // and optionally prefix the output
 // 
-@import "./normalize";
-@import "./global";
-@import "./layout";
-@import "./breakpoints";
-@import "./grid";
-@import "./type";
-@import "./animations";
-@import "./container";
-@import "./resets";
-@import "./bg";
+@import "normalize";
+@import "global";
+@import "layout";
+@import "breakpoints";
+@import "grid";
+@import "type";
+@import "animations";
+@import "container";
+@import "resets";
+@import "bg";
 
 @mixin make-all($prefix: '') {
   @include make-normalize($prefix);

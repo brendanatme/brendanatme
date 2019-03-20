@@ -3,7 +3,7 @@
 $grid-alignment: left;
 $grid-gutter: 16px;
 
-@mixin row {
+@mixin row($prefix: '') {
   @include clearfix;
 
   display: block;
@@ -17,7 +17,7 @@ $grid-gutter: 16px;
   margin-right: -$grid-gutter;
   position: relative;
 
-  &.vcenter {
+  &.#{$prefix}vcenter {
     &:before {
       @include ib;
       
@@ -33,12 +33,12 @@ $grid-gutter: 16px;
   }
 }
 
-@mixin col {
+@mixin col($prefix: '') {
   float: left;
   padding-left: $grid-gutter;
   padding-right: $grid-gutter;
 
-  &.ib {
+  &.#{$prefix}ib {
     @include ib;
     float: none;
   }

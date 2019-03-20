@@ -51,3 +51,12 @@
   height: auto;
   padding-top: 0;
 }
+
+@mixin rhythm($size: 40px) {
+  margin-bottom: $size;
+  margin-top: $size;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

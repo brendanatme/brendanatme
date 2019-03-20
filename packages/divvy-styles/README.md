@@ -14,21 +14,7 @@ Install the repo:
 (in your sass file)
 
 ```scss
-@import "~sass-utils/css/min.css";
-```
-
-### Import individual component minified css
-
-```scss
-@import "~sass-utils/css/animations.css";
-@import "~sass-utils/css/bg.css";
-@import "~sass-utils/css/breakpoints.css";
-@import "~sass-utils/css/container.css";
-@import "~sass-utils/css/global.css";
-@import "~sass-utils/css/grid.css";
-@import "~sass-utils/css/layout.css";
-@import "~sass-utils/css/resets.css";
-@import "~sass-utils/css/type.css";
+@import "~sass-utils/css/all.css";
 ```
 
 ### Import sass variables and mixins
@@ -39,7 +25,7 @@ Import everything:
 @import "~sass-utils/scss/all";
 ```
 
-Import individual components:
+Import individual component mixins:
 
 ```scss
 @import "~sass-utils/scss/animations";
@@ -57,7 +43,7 @@ Import individual components:
 
 ### Requirements
 
-- Node.js v8.9.3
+- Node.js v10.6+
 
 ### Installation
 
@@ -71,8 +57,3 @@ Import individual components:
 
 1. commit and push to Git
 1. run `npm run release [major | minor | patch]`
-
-### Roadmap
-
-- Compile Sass via gulp
-- Incorporate autoprefixer and other postcss capabilities

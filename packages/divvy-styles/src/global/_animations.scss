@@ -8,12 +8,12 @@
 // also contains keyframe definitions
 //
 
-@import "../abstract/animations";
+@import "../abstract/all";
 
-// shake
+// sass-utils-shake
 // use for input errors
 // sweet micro-interaction
-@keyframes shake {
+@keyframes sass-utils-shake {
   0% {
     transform: translateX(0px);
   }
@@ -40,7 +40,7 @@
 }
 
 // make button levitate on hover
-@keyframes hover {
+@keyframes sass-utils-hover {
   0% {
     transform: translateY(0);
   }
@@ -54,10 +54,10 @@
   }
 }
 
-// burst
+// sass-utils-burst
 // make thing appear, grow, and fade
 // currently used for button clicks
-@keyframes burst {
+@keyframes sass-utils-burst {
   0% {
     opacity: .3;
     transform: scale(0);
