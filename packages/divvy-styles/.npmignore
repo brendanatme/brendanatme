@@ -1,3 +1,4 @@
+.gitignore
 gulpfile.js
 scripts/
 src/
