@@ -1,6 +1,6 @@
 {
   "name": "divvy",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Sweet sweet sass mixins and css classes to pump up your divs",
   "main": "index.js",
   "scripts": {
