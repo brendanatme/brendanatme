@@ -1,20 +1,20 @@
 
-# Sass-Utils
+# Divvy
 
-Collection of handy SCSS utility mixins and classes. Opt in or out of whatever you want.
+A collection of sweet sweet SCSS utility mixins and classes to pump up your divs.
 
 ## Usage
 
 Install the repo:
 
-`npm install --save sass-utils`
+`npm install --save divvy`
 
 ### Import the full minified css
 
 (in your sass file)
 
 ```scss
-@import "~sass-utils/css/all.css";
+@import "~divvy/css/all.css";
 ```
 
 ### Import sass variables and mixins
@@ -22,21 +22,21 @@ Install the repo:
 Import everything:
 
 ```scss
-@import "~sass-utils/scss/all";
+@import "~divvy/scss/all";
 ```
 
 Import individual component mixins:
 
 ```scss
-@import "~sass-utils/scss/animations";
-@import "~sass-utils/scss/bg";
-@import "~sass-utils/scss/breakpoints";
-@import "~sass-utils/scss/container";
-@import "~sass-utils/scss/general";
-@import "~sass-utils/scss/grid";
-@import "~sass-utils/scss/layout";
-@import "~sass-utils/scss/resets";
-@import "~sass-utils/scss/type";
+@import "~divvy/scss/animations";
+@import "~divvy/scss/bg";
+@import "~divvy/scss/breakpoints";
+@import "~divvy/scss/container";
+@import "~divvy/scss/general";
+@import "~divvy/scss/grid";
+@import "~divvy/scss/layout";
+@import "~divvy/scss/resets";
+@import "~divvy/scss/type";
 ```
 
 ## Development

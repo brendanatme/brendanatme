@@ -1,7 +1,7 @@
 {
-  "name": "sass-utils",
-  "version": "1.0.2",
-  "description": "Sweet sweet general sass mixins and css classes",
+  "name": "divvy",
+  "version": "0.0.0",
+  "description": "Sweet sweet sass mixins and css classes to pump up your divs",
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brendanatme/sass-utils.git"
+    "url": "git+https://github.com/brendanatme/divvy.git"
   },
   "author": "brendanatme",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brendanatme/sass-utils/issues"
+    "url": "https://github.com/brendanatme/divvy/issues"
   },
-  "homepage": "https://github.com/brendanatme/sass-utils#readme",
+  "homepage": "https://github.com/brendanatme/divvy#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
