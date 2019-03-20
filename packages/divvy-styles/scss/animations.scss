@@ -1,0 +1,41 @@
+$ease-out: cubic-bezier(.02,.57,.38,.98);
+$ease-in-out: cubic-bezier(.58,.01,.25,.97);
+
+@mixin prefix($prop, $rule) {
+     -moz-#{$prop}: #{$rule};
+      -ms-#{$prop}: #{$rule};
+  -webkit-#{$prop}: #{$rule};
+          #{$prop}: #{$rule};
+}
+
+@mixin transition($rule) {
+  @include prefix('transition', $rule);
+}
+
+@mixin fade($speed: .75s) {
+  @include transition('opacity #{$speed} linear, visibility #{$speed} linear');
+}
+
+@mixin fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin fade-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin fade-slide($speed: .75s) {
+  @include transition('opacity #{$speed} linear, visibility #{$speed} linear, transform #{$speed} #{$ease-out}');
+}
+
+@mixin fade-slide-out {
+  @include fade-out;
+  @include prefix('transform', 'translateY(50px)');
+}
+
+@mixin fade-slide-in {
+  @include fade-in;
+  @include prefix('transform', 'translateY(0px)');
+}

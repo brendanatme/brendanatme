@@ -1,0 +1,92 @@
+//
+// animations
+//
+// use in conjunction with React CSSTransition
+// usage:
+// <CssTransition classNames="fade" ...
+//
+// also contains keyframe definitions
+//
+
+@import "../abstract/animations";
+
+// shake
+// use for input errors
+// sweet micro-interaction
+@keyframes shake {
+  0% {
+    transform: translateX(0px);
+  }
+  
+  20% {
+    transform: translateX(-7px);
+  }
+  
+  40% {
+    transform: translateX(7px);
+  }
+
+  60% {
+    transform: translateX(-7px);
+  }
+  
+  80% {
+    transform: translateX(7px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+// make button levitate on hover
+@keyframes hover {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// burst
+// make thing appear, grow, and fade
+// currently used for button clicks
+@keyframes burst {
+  0% {
+    opacity: .3;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@mixin make-animations($prefix: '') {
+  // .#{$prefix}fade-appear
+  // .#{$prefix}fade-appear-active
+  // .#{$prefix}fade-appear-done
+  // .#{$prefix}fade-exit
+  // .#{$prefix}fade-exit-active
+  // .#{$prefix}fade-exit-done
+  .#{$prefix}fade-enter         { @include fade-out; }
+  .#{$prefix}fade-enter-active  { @include fade-in; @include fade; }
+  .#{$prefix}fade-enter-done    { @include fade-in; @include fade; }
+  
+  // .#{$prefix}fade-slide-appear
+  // .#{$prefix}fade-slide-appear-active
+  // .#{$prefix}fade-slide-appear-done
+  // .#{$prefix}fade-slide-exit
+  // .#{$prefix}fade-slide-exit-active
+  // .#{$prefix}fade-slide-exit-done
+  .#{$prefix}fade-slide-enter         { @include fade-slide-out; }
+  .#{$prefix}fade-slide-enter-active  { @include fade-slide-in; @include fade-slide; }
+  .#{$prefix}fade-slide-enter-done    { @include fade-slide-in; @include fade-slide; }
+}

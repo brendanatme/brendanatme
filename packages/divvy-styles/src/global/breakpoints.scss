@@ -1,0 +1,62 @@
+//
+// global/breakpoints
+//
+// use breakpoints to set breakpoint-specific visibility classes
+// use !important flag since we want to override any local display property
+// that might be set on an element by a competing class
+// 
+@import "../abstract/breakpoints";
+
+@mixin make-breakpoints($prefix: '') {
+  .#{$prefix}smallest-only {
+    @include breakpoint('s') {
+      display: none !important;
+    }
+  }
+  
+  .#{$prefix}small-down {
+    @include breakpoint('m') {
+      display: none !important;
+    }
+  }
+  
+  .#{$prefix}medium-down {
+    @include breakpoint('l') {
+      display: none !important;
+    }
+  }
+  
+  .#{$prefix}large-down {
+    @include breakpoint('xl') {
+      display: none !important;
+    }
+  }
+  
+  .#{$prefix}small-up {
+    display: none !important;
+    @include breakpoint('m') {
+      display: inherit !important;
+    }
+  }
+  
+  .#{$prefix}medium-up {
+    display: none !important;
+    @include breakpoint('m') {
+      display: inherit !important;
+    }
+  }
+  
+  .#{$prefix}large-up {
+    display: none !important;
+    @include breakpoint('l') {
+      display: inherit !important;
+    }
+  }
+  
+  .#{$prefix}largest-up {
+    display: none !important;
+    @include breakpoint('xl') {
+      display: inherit !important;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import "../abstract/layout";
+
+@mixin make-layout($prefix: '') {
+  .#{$prefix}clearfix {
+    @include clearfix;
+  }
+  
+  .#{$prefix}fill {
+    @include fill;
+  }
+  
+  .#{$prefix}fill-height {
+    height: 100%;
+  }
+  
+  .#{$prefix}ib {
+    @include ib;
+  }
+  
+  .#{$prefix}vcenter {
+    @include vcenter;
+  
+    &.#{$prefix}fill {
+      position: absolute;
+    }
+  }
+  
+  .#{$prefix}square     { @include square; }
+  .#{$prefix}ratio-2-1  { @include ratio(2, 1); }
+  .#{$prefix}ratio-3-2  { @include ratio(3, 2); }
+  .#{$prefix}ratio-4-3  { @include ratio(3, 2); }
+  .#{$prefix}ratio-1-2  { @include ratio(1, 2); }
+  .#{$prefix}ratio-2-3  { @include ratio(2, 3); }
+  .#{$prefix}ratio-3-4  { @include ratio(2, 3); }
+  .#{$prefix}ratio-16-9 { @include ratio(16, 9); }
+  
+  .#{$prefix}rel {
+    position: relative;
+  }
+  
+  .#{$prefix}left {
+    float: left !important;
+  }
+  
+  .#{$prefix}right {
+    float: right !important;
+  }    
+}

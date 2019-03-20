@@ -1,0 +1,15 @@
+@import "../abstract/resets";
+
+@mixin make-resets($prefix: '') {
+  .#{$prefix}ul-reset {
+    @include ul-reset;
+  }
+  
+  .#{$prefix}ul-inline {
+    @include ul-inline;
+  }
+  
+  .#{$prefix}a-reset {
+    @include a-reset;
+  }
+}

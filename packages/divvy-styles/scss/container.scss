@@ -1,0 +1,23 @@
+// 
+// abstract/container
+// 
+// provide a center-aligned wrapper
+// with gutter padding on both sides
+// 
+
+@import "./breakpoints";
+@import "./grid";
+
+@mixin container-full {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+  position: relative;
+  width: 100%;
+}
+
+@mixin container {
+  @include container-full;
+  max-width: $breakpoint-xl;
+}

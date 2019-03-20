@@ -1,0 +1,16 @@
+@import "../abstract/container";
+
+@mixin make-container($prefix: '') {
+  .#{$prefix}container {
+    @include container;
+  }
+  
+  .#{$prefix}container-thin {
+    @include container-full;
+    max-width: $breakpoint-l;
+  }
+  
+  .#{$prefix}container-full {
+    @include container-full;
+  }
+}

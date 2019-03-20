@@ -1,0 +1,24 @@
+@import "../abstract/type";
+@import "../abstract/breakpoints";
+
+$alignments: ('left', 'center', 'right');
+
+@mixin make-type($prefix: '') {
+  .#{$prefix}truncate {
+    @include truncate;
+  }
+  
+  @each $a in $alignments {
+    .#{$prefix}text-#{$a} {
+      text-align: #{$a} !important;
+    }
+  
+    @each $bp in $breakpoints {
+      .#{$prefix}text-#{$a}-#{$bp} {
+        @include breakpoint($bp) {
+          text-align: #{$a} !important;
+        }
+      }
+    }
+  }
+}

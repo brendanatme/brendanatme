@@ -1,0 +1,45 @@
+@import "./layout";
+
+$grid-alignment: left;
+$grid-gutter: 16px;
+
+@mixin row {
+  @include clearfix;
+
+  display: block;
+  
+  // for .ib class set on columns
+  // we need font-size to be 0
+  // or else columns will not fit
+  font-size: 0;
+
+  margin-left: -$grid-gutter;
+  margin-right: -$grid-gutter;
+  position: relative;
+
+  &.vcenter {
+    &:before {
+      @include ib;
+      
+      content: '';
+      height: 100%;
+      width: 0;
+    }
+  
+    &:after {
+      content: '';
+      display: none;
+    }
+  }
+}
+
+@mixin col {
+  float: left;
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+
+  &.ib {
+    @include ib;
+    float: none;
+  }
+}

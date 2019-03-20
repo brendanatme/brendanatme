@@ -1,0 +1,7 @@
+@import "../abstract/bg";
+
+@mixin make-bg($prefix: '') {
+  .#{$prefix}bg {
+    @include bg;
+  }
+}
