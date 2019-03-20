@@ -1,6 +1,6 @@
 {
-  "name": "divvy",
-  "version": "1.0.0",
+  "name": "divvy-styles",
+  "version": "0.0.0",
   "description": "Sweet sweet sass mixins and css classes to pump up your divs",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brendanatme/divvy.git"
+    "url": "git+https://github.com/brendanatme/divvy-styles.git"
   },
   "author": "brendanatme",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brendanatme/divvy/issues"
+    "url": "https://github.com/brendanatme/divvy-styles/issues"
   },
-  "homepage": "https://github.com/brendanatme/divvy#readme",
+  "homepage": "https://github.com/brendanatme/divvy-styles#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",

@@ -1,5 +1,5 @@
 
-# Divvy
+# Divvy Styles
 
 A collection of sweet sweet SCSS utility mixins and classes to pump up your divs.
 
@@ -7,14 +7,14 @@ A collection of sweet sweet SCSS utility mixins and classes to pump up your divs
 
 Install the repo:
 
-`npm install --save divvy`
+`npm install --save divvy-styles`
 
 ### Import the full minified css
 
 (in your sass file)
 
 ```scss
-@import "~divvy/css/all.css";
+@import "~divvy-styles/css/all.css";
 ```
 
 ### Import sass variables and mixins
@@ -22,21 +22,21 @@ Install the repo:
 Import everything:
 
 ```scss
-@import "~divvy/scss/all";
+@import "~divvy-styles/scss/all";
 ```
 
 Import individual component mixins:
 
 ```scss
-@import "~divvy/scss/animations";
-@import "~divvy/scss/bg";
-@import "~divvy/scss/breakpoints";
-@import "~divvy/scss/container";
-@import "~divvy/scss/general";
-@import "~divvy/scss/grid";
-@import "~divvy/scss/layout";
-@import "~divvy/scss/resets";
-@import "~divvy/scss/type";
+@import "~divvy-styles/scss/animations";
+@import "~divvy-styles/scss/bg";
+@import "~divvy-styles/scss/breakpoints";
+@import "~divvy-styles/scss/container";
+@import "~divvy-styles/scss/general";
+@import "~divvy-styles/scss/grid";
+@import "~divvy-styles/scss/layout";
+@import "~divvy-styles/scss/resets";
+@import "~divvy-styles/scss/type";
 ```
 
 ## Development

@@ -10,7 +10,7 @@
 // do we even need this?
 // 
 @mixin make-global($prefix: '') {
-  .#{$prefix}sass-utils-scope {
+  .#{$prefix}divvy-styles-scope {
     &,
     body {
       height: 100%;
