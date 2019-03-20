@@ -17,26 +17,38 @@ Install the repo:
 @import "~divvy-styles/css/all.css";
 ```
 
+OR
+
 ### Import sass variables and mixins
 
 Import everything:
 
 ```scss
-@import "~divvy-styles/scss/all";
+@import "~divvy-styles/scss/abstract/all";
 ```
 
 Import individual component mixins:
 
 ```scss
-@import "~divvy-styles/scss/animations";
-@import "~divvy-styles/scss/bg";
-@import "~divvy-styles/scss/breakpoints";
-@import "~divvy-styles/scss/container";
-@import "~divvy-styles/scss/general";
-@import "~divvy-styles/scss/grid";
-@import "~divvy-styles/scss/layout";
-@import "~divvy-styles/scss/resets";
-@import "~divvy-styles/scss/type";
+@import "~divvy-styles/scss/abstract/animations";
+@import "~divvy-styles/scss/abstract/bg";
+@import "~divvy-styles/scss/abstract/breakpoints";
+@import "~divvy-styles/scss/abstract/container";
+@import "~divvy-styles/scss/abstract/general";
+@import "~divvy-styles/scss/abstract/grid";
+@import "~divvy-styles/scss/abstract/layout";
+@import "~divvy-styles/scss/abstract/resets";
+@import "~divvy-styles/scss/abstract/type";
+```
+
+OR
+
+### Make and prefix your own stylesheet
+
+```scss
+@import "~divvy-styles/scss/global/make-all";
+
+@include make-all('my-prefix-');
 ```
 
 ## Development
