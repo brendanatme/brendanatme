@@ -1,6 +1,6 @@
 {
   "name": "sass-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sweet sweet general sass mixins and css classes",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/brendanatme/sass-utils.git"
+    "url": "git+https://github.com/brendanatme/sass-utils.git"
   },
   "author": "brendanatme",
   "license": "ISC",
