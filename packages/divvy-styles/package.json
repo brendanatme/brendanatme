@@ -1,12 +1,12 @@
 {
   "name": "divvy-styles",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Sweet sweet sass mixins and css classes to pump up your divs",
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
     "compile": "gulp compile",
-    "copy": "cp -r src/abstract/ scss",
+    "copy": "cp -r src/ scss;",
     "build": "npm run compile; npm run copy",
     "release": "node ./scripts/release.js"
   },
