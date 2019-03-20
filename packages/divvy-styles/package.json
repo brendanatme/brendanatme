@@ -1,6 +1,6 @@
 {
   "name": "sass-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sweet sweet general sass mixins and css classes",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,10 @@
   },
   "author": "brendanatme",
   "license": "ISC",
-  "homepage": "https://github.com/brendanatme/sass-utils",
+  "bugs": {
+    "url": "https://github.com/brendanatme/sass-utils/issues"
+  },
+  "homepage": "https://github.com/brendanatme/sass-utils#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
