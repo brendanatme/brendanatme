@@ -57,4 +57,18 @@
   .#{$prefix}right {
     float: right !important;
   }
+
+  @each $bp in $breakpoints {
+    .#{$prefix}left--#{$bp} {
+      @include breakpoint($bp) {
+        float: left !important;
+      }
+    }
+
+    .#{$prefix}right--#{$bp} {
+      @include breakpoint($bp) {
+        float: right !important;
+      }
+    }
+  }
 }
