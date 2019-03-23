@@ -10,10 +10,10 @@
 
 @import "../abstract/all";
 
-// sass-utils-shake
+// divvy-styles-shake
 // use for input errors
 // sweet micro-interaction
-@keyframes sass-utils-shake {
+@keyframes divvy-styles-shake {
   0% {
     transform: translateX(0px);
   }
@@ -40,7 +40,7 @@
 }
 
 // make button levitate on hover
-@keyframes sass-utils-hover {
+@keyframes divvy-styles-hover {
   0% {
     transform: translateY(0);
   }
@@ -54,10 +54,10 @@
   }
 }
 
-// sass-utils-burst
+// divvy-styles-burst
 // make thing appear, grow, and fade
 // currently used for button clicks
-@keyframes sass-utils-burst {
+@keyframes divvy-styles-burst {
   0% {
     opacity: .3;
     transform: scale(0);
@@ -70,6 +70,14 @@
 }
 
 @mixin make-animations($prefix: '') {
+  .#{$prefix}fade { @include fade; }
+  .#{$prefix}fade--in { @include fade-in; }
+  .#{$prefix}fade--out { @include fade-out; }
+
+  .#{$prefix}fade-slide { @include fade-slide; }
+  .#{$prefix}fade-slide--in { @include fade-slide-in; }
+  .#{$prefix}fade-slide--out { @include fade-out; }
+  
   // .#{$prefix}fade-appear
   // .#{$prefix}fade-appear-active
   // .#{$prefix}fade-appear-done
