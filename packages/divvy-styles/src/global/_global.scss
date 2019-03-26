@@ -11,9 +11,10 @@
 // 
 @mixin make-global($prefix: '') {
   .#{$prefix}divvy-styles-scope {
-    &,
-    body {
-      height: 100%;
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
     }
     
     img {
