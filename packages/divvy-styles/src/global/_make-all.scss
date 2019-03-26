@@ -14,6 +14,7 @@
 @import "container";
 @import "resets";
 @import "bg";
+@import "spinner";
 
 @mixin make-all($prefix: '') {
   @include make-normalize($prefix);
@@ -26,4 +27,5 @@
   @include make-container($prefix);
   @include make-resets($prefix);
   @include make-bg($prefix);
+  @include make-spinner($prefix);
 }

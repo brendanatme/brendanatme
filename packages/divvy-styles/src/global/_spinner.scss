@@ -1,0 +1,125 @@
+// 
+// spinner
+// ripped from
+// https://codepen.io/dimsemenov/pen/yyBWoR
+// and modified
+//
+
+$spinnerSize: 14px;
+
+@mixin make-spinner($prefix: '') {
+  .#{$prefix}spinner__icn {
+    -webkit-animation: divvy-clockwise 500ms linear infinite;
+    animation: divvy-clockwise 500ms linear infinite;
+    height: $spinnerSize;
+    margin: -#{$spinnerSize + 1} #{$spinnerSize - 2} 0;
+    opacity: 0.75;
+    position: relative;
+    width: $spinnerSize;
+  
+    &.#{$prefix}spinner__icn--large {
+      height: $spinnerSize * 2;
+      margin: -#{$spinnerSize * 2 + 1} #{$spinnerSize * 2 - 2} 0;
+      width: $spinnerSize * 2;
+    }
+  
+    &.#{$prefix}spinner__icn--largest {
+      height: $spinnerSize * 3;
+      margin: -#{$spinnerSize * 3 + 1} #{$spinnerSize * 3 - 2} 0;
+      width: $spinnerSize * 3;
+    }
+  
+    &.#{$prefix}spinner__icn--center {
+      margin: 0 auto;
+    }
+  }
+  
+  /* The idea of animating inner circle is based on Polymer loading indicator by Keanu Lee https://blog.keanulee.com/2014/10/20/the-tale-of-three-spinners.html */
+  .#{$prefix}spinner__cut {
+    height: $spinnerSize;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: $spinnerSize / 2;
+  
+    .#{$prefix}spinner__icn--large & {
+      height: $spinnerSize * 2;
+      width: $spinnerSize;
+    }
+  
+    .#{$prefix}spinner__icn--largest & {
+      height: $spinnerSize * 3;
+      width: $spinnerSize * 1.5;
+    }
+  }
+  
+  .#{$prefix}spinner__donut--fake {
+    background: none;
+    border: 2px solid red;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: $spinnerSize;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: $spinnerSize;
+    
+    .#{$prefix}spinner__icn--large & {
+      height: $spinnerSize * 2;
+      width: $spinnerSize * 2;
+    }
+  
+    .#{$prefix}spinner__icn--largest & {
+      height: $spinnerSize * 3;
+      width: $spinnerSize * 3;
+    }
+  }
+  
+  .#{$prefix}spinner__donut {
+    -webkit-animation: divvy-donut-rotate 1000ms cubic-bezier(.4,0,.22,1) infinite;
+    animation: divvy-donut-rotate 1000ms cubic-bezier(.4,0,.22,1) infinite;
+    background: none;
+    border: 2px solid #000;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    box-sizing: border-box;
+    height: $spinnerSize;	
+    left: 0;
+    margin:0;
+    position: absolute;
+    top: 0;
+    width: $spinnerSize;
+  
+    .#{$prefix}spinner__icn--large & {
+      height: $spinnerSize * 2;
+      width: $spinnerSize * 2;
+    }
+  
+    .#{$prefix}spinner__icn--largest & {
+      height: $spinnerSize * 3;
+      width: $spinnerSize * 3;
+    }
+  }
+  
+  @-webkit-keyframes divvy-clockwise {
+    0% { -webkit-transform: rotate(0deg) }
+    100% { -webkit-transform: rotate(360deg) }
+  }
+  @keyframes divvy-clockwise {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+  }
+  @-webkit-keyframes divvy-donut-rotate {
+    0% { -webkit-transform: rotate(0) }
+    50% { -webkit-transform: rotate(-140deg) }
+    100% { -webkit-transform: rotate(0) }
+  }
+  @keyframes divvy-donut-rotate {
+    0% { transform: rotate(0) }
+    50% { transform: rotate(-140deg) }
+    100% { transform: rotate(0) }
+  }
+}
