@@ -7,11 +7,14 @@ $ease-in-out: cubic-bezier(.58,.01,.25,.97);
 
 @mixin fade-out {
   opacity: 0;
+  pointer-events: none;
   visibility: hidden;
+
 }
 
 @mixin fade-in {
   opacity: 1;
+  pointer-events: auto;
   visibility: visible;
 }
 
