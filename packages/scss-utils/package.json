@@ -1,0 +1,31 @@
+{
+  "name": "@brendanatme/scss-utils",
+  "version": "0.0.0",
+  "description": "Sweet sweet sass mixins and css classes to pump up your divs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp",
+    "compile": "gulp compile",
+    "copy": "cp -r src/ scss;",
+    "build": "npm run compile; npm run copy",
+    "release": "node ./scripts/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendanatme/scss-utils.git"
+  },
+  "author": "brendanatme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brendanatme/scss-utils/issues"
+  },
+  "homepage": "https://github.com/brendanatme/scss-utils#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.9.2",
+    "normalize.css": "^8.0.0"
+  }
+}
